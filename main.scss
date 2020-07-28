@@ -2,6 +2,7 @@ $colors: (
   bg: #06183b,
   bg-dark: darken(#06183b, 5%),
   bg-light: #fff,
+  bg-trans: rgba(6, 24, 59, 0.2),
   accent: #f95c6d,
   accent2: #82a6a2,
 );
@@ -212,7 +213,7 @@ canvas {
 .main-h1 {
   display: block;
   text-align: center;
-  padding-top: 4rem;
+  padding-top: 2rem;
   font-size: 3rem;
   color: color(bg);
   animation: slideRight 0.7s ease both;
@@ -372,8 +373,8 @@ canvas {
   margin: 2rem 10rem;
 
   .img {
-    height: 15rem;
-    width: 15rem;
+    height: 11rem;
+    width: 11rem;
     border: 2px solid color(bg);
     border-radius: 5px;
     background: color(accent);
@@ -384,7 +385,7 @@ canvas {
 /******SECTION CONTACT******/
 .contact {
   position: relative;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
 
   .contact-container {
@@ -395,40 +396,73 @@ canvas {
   #contact-form {
     display: flex;
     flex-direction: column;
-    width: 40rem;
-    margin: 2rem 25rem;
+    width: 30rem;
+    margin: 0 auto;
+    background-color: color(accent);
+    border-radius: 5px;
+    animation: fadeIn 1s ease-out 0.5s;
+
+    .input-general {
+      align-items: center;
+      margin: 0 auto;
+      width: 25rem;
+      font-family: inherit;
+      font-size: 1rem;
+      color: color(bg);
+      background-color: color(bg-trans);
+      border: none;
+      border-bottom: 0.2rem color(bg) solid;
+    }
 
     .input-text {
-      width: 20rem;
-      height: 3rem;
-      margin-bottom: 0.5rem;
+      height: 2rem;
+      margin-bottom: 1rem;
+
+      &:first-child {
+        margin-top: 2rem;
+      }
     }
 
     .input-textarea {
-      width: 20rem;
       height: 6rem;
+      min-height: 3rem;
+      max-height: 10rem;
+      resize: vertical;
     }
 
     .input-button {
       text-decoration: none;
-      height: 50px;
-      line-height: 50px;
-      padding: 0 15px;
-      font-size: 16px;
+      font-family: inherit;
+      font-size: 1.2rem;
+      height: 3rem;
+      width: 15rem;
+      margin: 2rem auto;
       color: color(bg);
-      position: relative;
+      background-color: color(accent2);
+      border-radius: 5px;
     }
   }
 }
 
-/******INTRO******/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/******FOOTER******/
 footer {
   background-color: color(bg);
-  height: 60vh;
+  height: 50vh;
   width: 100%;
 
   #logo-footer {
-    height: 8rem;
+    height: 6rem;
 
     a {
       cursor: pointer;
@@ -437,8 +471,8 @@ footer {
     img {
       display: block;
       margin: 0 auto;
-      padding-top: 2rem;
-      height: 9rem;
+      padding-top: 1rem;
+      height: 7rem;
       width: auto;
     }
   }
@@ -449,7 +483,7 @@ footer {
     font-size: 2rem;
     width: 30rem;
     text-align: center;
-    margin: 1rem auto 0;
+    margin: 0.5rem auto 0;
   }
 
   #footer-icons {
@@ -482,15 +516,13 @@ footer {
 
   #copyright {
     display: block;
-    width: 100%;
-    padding-left: 41%;
+    width: 20%;
+    margin: 0 auto;
 
     .copyright-text {
       color: color(bg-light);
       font-size: 1rem;
-
-      text-align: center;
-      margin: 3rem auto 0;
+      margin: 2rem 1% 0;
     }
   }
 }

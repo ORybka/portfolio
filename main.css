@@ -208,7 +208,7 @@ canvas {
 .main-h1 {
   display: block;
   text-align: center;
-  padding-top: 4rem;
+  padding-top: 2rem;
   font-size: 3rem;
   color: #06183b;
   -webkit-animation: slideRight 0.7s ease both;
@@ -443,8 +443,8 @@ canvas {
 }
 
 #projects-flex .img {
-  height: 15rem;
-  width: 15rem;
+  height: 11rem;
+  width: 11rem;
   border: 2px solid #06183b;
   border-radius: 5px;
   background: #f95c6d;
@@ -454,7 +454,7 @@ canvas {
 /******SECTION CONTACT******/
 .contact {
   position: relative;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
 }
 
@@ -471,40 +471,91 @@ canvas {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 40rem;
-  margin: 2rem 25rem;
+  width: 30rem;
+  margin: 0 auto;
+  background-color: #f95c6d;
+  border-radius: 5px;
+  -webkit-animation: fadeIn 1s ease-out 0.5s;
+          animation: fadeIn 1s ease-out 0.5s;
+}
+
+.contact #contact-form .input-general {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: 25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #06183b;
+  background-color: rgba(6, 24, 59, 0.2);
+  border: none;
+  border-bottom: 0.2rem #06183b solid;
 }
 
 .contact #contact-form .input-text {
-  width: 20rem;
-  height: 3rem;
-  margin-bottom: 0.5rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact #contact-form .input-text:first-child {
+  margin-top: 2rem;
 }
 
 .contact #contact-form .input-textarea {
-  width: 20rem;
   height: 6rem;
+  min-height: 3rem;
+  max-height: 10rem;
+  resize: vertical;
 }
 
 .contact #contact-form .input-button {
   text-decoration: none;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 15px;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  height: 3rem;
+  width: 15rem;
+  margin: 2rem auto;
   color: #06183b;
-  position: relative;
+  background-color: #82a6a2;
+  border-radius: 5px;
 }
 
-/******INTRO******/
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/******FOOTER******/
 footer {
   background-color: #06183b;
-  height: 60vh;
+  height: 50vh;
   width: 100%;
 }
 
 footer #logo-footer {
-  height: 8rem;
+  height: 6rem;
 }
 
 footer #logo-footer a {
@@ -514,8 +565,8 @@ footer #logo-footer a {
 footer #logo-footer img {
   display: block;
   margin: 0 auto;
-  padding-top: 2rem;
-  height: 9rem;
+  padding-top: 1rem;
+  height: 7rem;
   width: auto;
 }
 
@@ -525,7 +576,7 @@ footer h3 {
   font-size: 2rem;
   width: 30rem;
   text-align: center;
-  margin: 1rem auto 0;
+  margin: 0.5rem auto 0;
 }
 
 footer #footer-icons {
@@ -564,14 +615,13 @@ footer #footer-icons .mail:hover {
 
 footer #copyright {
   display: block;
-  width: 100%;
-  padding-left: 41%;
+  width: 20%;
+  margin: 0 auto;
 }
 
 footer #copyright .copyright-text {
   color: #fff;
   font-size: 1rem;
-  text-align: center;
-  margin: 3rem auto 0;
+  margin: 2rem 1% 0;
 }
 /*# sourceMappingURL=main.css.map */
