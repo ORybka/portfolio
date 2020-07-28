@@ -8,12 +8,20 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Olha Mykolaichuk</title>
   </head>
   <body>
-    <div class="intro-container">
-      <canvas id="test"></canvas>
+    <div id="intro" class="intro-container">
+      <canvas id="intro-animated"></canvas>
       <div class="intro">
         <h1 id="hello">
           Hello, my name is <span id="name">Olha Mykolaichuk</span>, <br />
@@ -25,13 +33,13 @@
     <div class="menu">
       <div class="menu-container">
         <header class="header">
-          <div id="logo">
+          <div id="logo-main">
             <img src="logo_main.png" alt="logo" />
           </div>
           <nav class="nav">
             <ul class="nav-list">
               <li>
-                <a class="nav-pnkt" href="#welcome-section">Home</a>
+                <a class="nav-pnkt" href="#intro">Home</a>
               </li>
               <li>
                 <a class="nav-pnkt" href="#about">About</a>
@@ -56,9 +64,14 @@
         <div class="about-exp">Proffesional experience</div>
         <div class="about-edu">Education<br />Certificates</div>
       </div>
-      <button id="button-cv" onclick="window.location.href='https:\/\/drive.google.com/file/d/1U6BzsUdoEVg2a9SwCXeTq-DWYM5vfl_r/view?usp=sharing';">
-        You can download CV here
-      </button>
+      <a
+        href="https://drive.google.com/file/d/1U6BzsUdoEVg2a9SwCXeTq-DWYM5vfl_r/view?usp=sharing"
+        target="_blank"
+        ><button id="button-cv">
+          <i class="material-icons download">get_app</i>
+          Download CV here
+        </button></a
+      >
     </section>
     <section id="projects" class="projects">
       <div class="projects-container">
@@ -80,13 +93,49 @@
       </div>
       <div id="contact-form">
         <form method="post">
-          <input type="text" name="name" placeholder="Enter your Name" class="input-text"/>
-          <input type="email" name="email" placeholder="Enter your email" class="input-text"/>
-          <input type="textarea" name="text" placeholder="Enter your message" class="input-textarea"/>
-          <input type="submit" value="Submit" class="input-button"/>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your Name"
+            class="input-text"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            class="input-text"
+          />
+          <input
+            type="textarea"
+            name="text"
+            placeholder="Enter your message"
+            class="input-textarea"
+          />
+          <input type="submit" value="Submit" class="input-button" />
         </form>
       </div>
     </section>
+    <footer>
+      <div id="logo-footer">
+        <a href="#intro"
+          ><img
+            src="logo_main.png"
+            alt="Olha Mykolaichuk - Front End developer"
+        /></a>
+      </div>
+      <h3>Eat, sleep, code, repeat</h3>
+      <div id="footer-icons">
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-github"></a>
+        <a href="#"> <i class="material-icons download mail">mail</i></a>
+        <a href="#" class="fa fa-codepen"></a>
+      </div>
+      <div id="copyright">
+        <span class="copyright-text">Olha Mykolaichuk</span>
+        <i class="material-icons download copyright-text">copyright</i>
+        <span class="copyright-text">2020</span>
+      </div>
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>

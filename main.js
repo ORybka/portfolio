@@ -1,6 +1,9 @@
+/**********************************************
+INTRO CANVAS
+***********************************************/
 let w = window.innerWidth,
     h = window.innerHeight,
-    canvas = document.getElementById('test'),
+    canvas = document.getElementById('intro-animated'),
     ctx = canvas.getContext('2d'),
     rate = 60,
     arc = 100,
@@ -86,9 +89,6 @@ create();
 particles();
 
 
-
-
-
 /**********************************************
 MENU
 ***********************************************/
@@ -104,3 +104,4 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
+

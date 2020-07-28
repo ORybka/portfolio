@@ -66,6 +66,7 @@ body {
   font-size: 87.5%;
   max-width: 85rem;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /******INTRO******/
@@ -133,7 +134,7 @@ canvas {
     justify-content: space-between;
     align-items: center;
 
-    #logo img {
+    #logo-main img {
       height: 4rem;
       width: auto;
       margin: 0.3rem 0.8rem 0.3rem;
@@ -211,8 +212,10 @@ canvas {
 .main-h1 {
   display: block;
   text-align: center;
+  padding-top: 4rem;
   font-size: 3rem;
   color: color(bg);
+  animation: slideRight 0.7s ease both;
 
   &::after {
     content: "";
@@ -222,6 +225,17 @@ canvas {
     background: color(bg);
     position: relative;
     z-index: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -298,19 +312,43 @@ canvas {
 /******BUTTON******/
 #button-cv {
   display: block;
-  position: fixed;
-  right: 1rem;
-  top: 25rem;
-  z-index: 99999;
-  width: 7rem;
-  height: 7rem;
-  padding: 1rem;
+  position: absolute;
+  right: -10rem;
+  top: 30rem;
+  transition: 0.3s;
+  width: 13rem;
+  height: 3.6rem;
+  padding: 0.5rem 0.7rem;
   border: 0.1rem solid #000;
-  border-radius: 30%;
+  border-radius: 1rem;
   background-color: color(accent2);
   font-weight: bold;
   font-size: 0.9rem;
   text-transform: uppercase;
+
+  .download {
+    display: block;
+    float: left;
+    padding: 0.4rem 0.3rem 0.2rem;
+    animation: download 1s ease 1s infinite alternate;
+  }
+
+  &:hover {
+    right: 0;
+  }
+}
+
+@keyframes download {
+  0% {
+    transform: scale(1.1, 0.9);
+  }
+  50% {
+    transform: scale(0.9, 1.1) translateY(-0.5rem);
+  }
+  70% {
+    transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 /******SECTION PROJECTS******/
@@ -379,6 +417,80 @@ canvas {
       font-size: 16px;
       color: color(bg);
       position: relative;
+    }
+  }
+}
+
+/******INTRO******/
+footer {
+  background-color: color(bg);
+  height: 60vh;
+  width: 100%;
+
+  #logo-footer {
+    height: 8rem;
+
+    a {
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      padding-top: 2rem;
+      height: 9rem;
+      width: auto;
+    }
+  }
+
+  h3 {
+    display: block;
+    color: color(bg-light);
+    font-size: 2rem;
+    width: 30rem;
+    text-align: center;
+    margin: 1rem auto 0;
+  }
+
+  #footer-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    margin: 0 auto;
+    padding-top: 2rem;
+
+    .fa,
+    .mail {
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      width: 3rem;
+      height: 3rem;
+      text-align: center;
+      background: none;
+      border: 0.2rem color(bg-light) solid;
+      border-radius: 50%;
+      color: color(bg-light);
+
+      &:hover {
+        background-color: color(bg);
+        color: color(accent);
+        border: 0.2rem color(accent) solid;
+      }
+    }
+  }
+
+  #copyright {
+    display: block;
+    width: 100%;
+    padding-left: 41%;
+
+    .copyright-text {
+      color: color(bg-light);
+      font-size: 1rem;
+
+      text-align: center;
+      margin: 3rem auto 0;
     }
   }
 }

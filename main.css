@@ -47,6 +47,7 @@ body {
   font-size: 87.5%;
   max-width: 85rem;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /******INTRO******/
@@ -123,7 +124,7 @@ canvas {
           align-items: center;
 }
 
-.menu-container .header #logo img {
+.menu-container .header #logo-main img {
   height: 4rem;
   width: auto;
   margin: 0.3rem 0.8rem 0.3rem;
@@ -207,8 +208,11 @@ canvas {
 .main-h1 {
   display: block;
   text-align: center;
+  padding-top: 4rem;
   font-size: 3rem;
   color: #06183b;
+  -webkit-animation: slideRight 0.7s ease both;
+          animation: slideRight 0.7s ease both;
 }
 
 .main-h1::after {
@@ -219,6 +223,32 @@ canvas {
   background: #06183b;
   position: relative;
   z-index: 1;
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 .about-grid {
@@ -326,19 +356,64 @@ canvas {
 /******BUTTON******/
 #button-cv {
   display: block;
-  position: fixed;
-  right: 1rem;
-  top: 25rem;
-  z-index: 99999;
-  width: 7rem;
-  height: 7rem;
-  padding: 1rem;
+  position: absolute;
+  right: -10rem;
+  top: 30rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 13rem;
+  height: 3.6rem;
+  padding: 0.5rem 0.7rem;
   border: 0.1rem solid #000;
-  border-radius: 30%;
+  border-radius: 1rem;
   background-color: #82a6a2;
   font-weight: bold;
   font-size: 0.9rem;
   text-transform: uppercase;
+}
+
+#button-cv .download {
+  display: block;
+  float: left;
+  padding: 0.4rem 0.3rem 0.2rem;
+  -webkit-animation: download 1s ease 1s infinite alternate;
+          animation: download 1s ease 1s infinite alternate;
+}
+
+#button-cv:hover {
+  right: 0;
+}
+
+@-webkit-keyframes download {
+  0% {
+    -webkit-transform: scale(1.1, 0.9);
+            transform: scale(1.1, 0.9);
+  }
+  50% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-0.5rem);
+            transform: scale(0.9, 1.1) translateY(-0.5rem);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes download {
+  0% {
+    -webkit-transform: scale(1.1, 0.9);
+            transform: scale(1.1, 0.9);
+  }
+  50% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-0.5rem);
+            transform: scale(0.9, 1.1) translateY(-0.5rem);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 /******SECTION PROJECTS******/
@@ -419,5 +494,84 @@ canvas {
   font-size: 16px;
   color: #06183b;
   position: relative;
+}
+
+/******INTRO******/
+footer {
+  background-color: #06183b;
+  height: 60vh;
+  width: 100%;
+}
+
+footer #logo-footer {
+  height: 8rem;
+}
+
+footer #logo-footer a {
+  cursor: pointer;
+}
+
+footer #logo-footer img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 2rem;
+  height: 9rem;
+  width: auto;
+}
+
+footer h3 {
+  display: block;
+  color: #fff;
+  font-size: 2rem;
+  width: 30rem;
+  text-align: center;
+  margin: 1rem auto 0;
+}
+
+footer #footer-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+footer #footer-icons .fa,
+footer #footer-icons .mail {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  background: none;
+  border: 0.2rem #fff solid;
+  border-radius: 50%;
+  color: #fff;
+}
+
+footer #footer-icons .fa:hover,
+footer #footer-icons .mail:hover {
+  background-color: #06183b;
+  color: #f95c6d;
+  border: 0.2rem #f95c6d solid;
+}
+
+footer #copyright {
+  display: block;
+  width: 100%;
+  padding-left: 41%;
+}
+
+footer #copyright .copyright-text {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  margin: 3rem auto 0;
 }
 /*# sourceMappingURL=main.css.map */
