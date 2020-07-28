@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <title>Olha Mykolaichuk</title>
+  </head>
+  <body>
+    <div class="intro-container">
+      <canvas id="test"></canvas>
+      <div class="intro">
+        <h1 id="hello">
+          Hello, my name is <span id="name">Olha Mykolaichuk</span>, <br />
+          and I'm at the beginning of the Front&nbspend developer path.
+        </h1>
+        <a href="#about" id="more">Learn more</a>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="menu-container">
+        <header class="header">
+          <div id="logo">
+            <img src="logo_main.png" alt="logo" />
+          </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li>
+                <a class="nav-pnkt" href="#welcome-section">Home</a>
+              </li>
+              <li>
+                <a class="nav-pnkt" href="#about">About</a>
+              </li>
+              <li>
+                <a class="nav-pnkt" href="#projects">Projects</a>
+              </li>
+              <li>
+                <a class="nav-pnkt" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <section id="about" class="about">
+      <div class="about-container">
+        <h1 class="main-h1">About</h1>
+      </div>
+      <div class="about-grid">
+        <div class="about-tech">Technical skills</div>
+        <div class="about-exp">Proffesional experience</div>
+        <div class="about-edu">Education<br />Certificates</div>
+      </div>
+      <button id="button-cv" onclick="window.location.href='https:\/\/drive.google.com/file/d/1U6BzsUdoEVg2a9SwCXeTq-DWYM5vfl_r/view?usp=sharing';">
+        You can download CV here
+      </button>
+    </section>
+    <section id="projects" class="projects">
+      <div class="projects-container">
+        <h1 class="main-h1">Some of my projects</h1>
+      </div>
+      <div id="projects-flex">
+        <div class="img">img1</div>
+        <div class="img">img2</div>
+        <div class="img">img3</div>
+        <div class="img">img4</div>
+        <div class="img">img5</div>
+        <div class="img">img6</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <h1 class="main-h1">Contact</h1>
+      </div>
+      <div id="contact-form">
+        <form method="post">
+          <input type="text" name="name" placeholder="Enter your Name" class="input-text"/>
+          <input type="email" name="email" placeholder="Enter your email" class="input-text"/>
+          <input type="textarea" name="text" placeholder="Enter your message" class="input-textarea"/>
+          <input type="submit" value="Submit" class="input-button"/>
+        </form>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>

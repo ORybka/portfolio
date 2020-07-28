@@ -1,0 +1,384 @@
+$colors: (
+  bg: #06183b,
+  bg-dark: darken(#06183b, 5%),
+  bg-light: #fff,
+  accent: #f95c6d,
+  accent2: #82a6a2,
+);
+
+@function color($colors-name) {
+  @return map-get($colors, $colors-name);
+}
+
+%bg-circle {
+  color: color(bg);
+  font-weight: bold;
+  border: 1rem solid color(accent);
+  background-color: color(accent);
+  border-radius: 25%;
+  height: 12rem;
+  width: 14rem;
+  margin: 2rem 2rem 1rem;
+  padding-top: 2rem;
+  transition: width 2s, height 3s;
+}
+
+%bg-circle-hover {
+  width: 50rem;
+  height: 50rem;
+  grid-column: 1/4;
+  grid-row: 1/3;
+  position: relative;
+  z-index: 10;
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", Arial, Verdana, sans-serif;
+  /* 1rem = 14px, 87.5% = 14px*/
+  font-size: 87.5%;
+  max-width: 85rem;
+  scroll-behavior: smooth;
+}
+
+/******INTRO******/
+.intro-container {
+  background-color: color(bg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+canvas {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.intro {
+  position: absolute;
+  display: block;
+  margin: 10% 10%;
+  color: color(bg-light);
+  text-align: center;
+
+  #hello {
+    font-size: 2.5rem;
+    margin: 1.5rem 1rem 4rem;
+
+    span#name {
+      color: color(accent);
+
+      &:hover {
+        animation: colorChange 1s forwards;
+      }
+    }
+  }
+
+  #more {
+    background: transparent;
+    padding: 1.5rem 2.5rem;
+    color: color(bg-light);
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: 0.3rem solid color(bg-light);
+    border-radius: 0.5rem;
+
+    &:hover {
+      background: color(accent);
+    }
+  }
+}
+
+/******MENU******/
+.menu {
+  width: 100%;
+}
+
+.menu-container {
+  position: relative;
+  height: 4rem;
+  background-color: color(bg-dark);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #logo img {
+      height: 4rem;
+      width: auto;
+      margin: 0.3rem 0.8rem 0.3rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-right: 0.5rem;
+      width: 100%;
+      z-index: 10;
+
+      .nav-list {
+        display: flex;
+        margin-right: 0.7rem;
+        list-style-type: none;
+      }
+    }
+    .nav-pnkt {
+      display: block;
+      font-size: 1rem;
+      margin-left: 2rem;
+      color: color(bg-light);
+
+      &::after {
+        content: "";
+        display: block;
+        width: 20%;
+        height: 0.1rem;
+        background: color(accent);
+        position: relative;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        transition: width 0.5s ease-in-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &:hover {
+        color: color(accent);
+      }
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.sticky + .about + .projects + .contact {
+  padding-top: 102px;
+} //?????????????????
+
+/******SECTION ABOUT******/
+.about {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.about-container {
+  margin: 1.5rem auto;
+  width: 10rem;
+}
+
+.main-h1 {
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+  color: color(bg);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    background: color(bg);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 80%;
+  margin: 0 auto 2rem;
+  height: 15rem;
+  text-align: center;
+  font-size: 2rem;
+
+  .about-tech {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    @extend %bg-circle;
+
+    /*
+    &:hover {
+      @extend %bg-circle-hover;
+    }
+    */
+  }
+
+  .about-exp {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    @extend %bg-circle;
+
+    /*
+    &:hover {
+      @extend %bg-circle-hover;
+    }
+    */
+  }
+
+  .about-edu {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    @extend %bg-circle;
+
+    /*
+    &:hover {
+      @extend %bg-circle-hover;
+    }
+    */
+  }
+}
+
+@keyframes colorChange {
+  from {
+    color: color(accent);
+  }
+  to {
+    color: color(bg-light);
+  }
+}
+
+@keyframes about {
+  from {
+    height: 12rem;
+    width: 14rem;
+    margin: 2rem 2rem 1rem;
+    padding-top: 2rem;
+  }
+  to {
+    position: absolute;
+    height: 30rem;
+    width: 50rem;
+  }
+}
+
+/******BUTTON******/
+#button-cv {
+  display: block;
+  position: fixed;
+  right: 1rem;
+  top: 25rem;
+  z-index: 99999;
+  width: 7rem;
+  height: 7rem;
+  padding: 1rem;
+  border: 0.1rem solid #000;
+  border-radius: 30%;
+  background-color: color(accent2);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/******SECTION PROJECTS******/
+.projects {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: color(accent2);
+
+  .projects-container {
+    margin: 1.5rem auto;
+    width: 30rem;
+  }
+}
+
+#projects-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50rem;
+  margin: 2rem 10rem;
+
+  .img {
+    height: 15rem;
+    width: 15rem;
+    border: 2px solid color(bg);
+    border-radius: 5px;
+    background: color(accent);
+    margin: 0.5rem;
+  }
+}
+
+/******SECTION CONTACT******/
+.contact {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+  .contact-container {
+    margin: 1.5rem auto;
+    width: 11rem;
+  }
+
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    margin: 2rem 25rem;
+
+    .input-text {
+      width: 20rem;
+      height: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .input-textarea {
+      width: 20rem;
+      height: 6rem;
+    }
+
+    .input-button {
+      text-decoration: none;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 15px;
+      font-size: 16px;
+      color: color(bg);
+      position: relative;
+    }
+  }
+}
