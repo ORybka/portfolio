@@ -12,6 +12,29 @@
   transition: width 2s, height 3s;
 }
 
+.contact #contact-form .input-text:focus, .contact #contact-form .input-textarea:focus, .contact #contact-form .input-button:focus {
+  outline: none;
+  border: none;
+  border-bottom: 0.2rem #06183b solid;
+  color: #06183b;
+}
+
+.contact #contact-form .input-text:focus::-webkit-input-placeholder, .contact #contact-form .input-textarea:focus::-webkit-input-placeholder, .contact #contact-form .input-button:focus::-webkit-input-placeholder {
+  color: #06183b;
+}
+
+.contact #contact-form .input-text:focus:-ms-input-placeholder, .contact #contact-form .input-textarea:focus:-ms-input-placeholder, .contact #contact-form .input-button:focus:-ms-input-placeholder {
+  color: #06183b;
+}
+
+.contact #contact-form .input-text:focus::-ms-input-placeholder, .contact #contact-form .input-textarea:focus::-ms-input-placeholder, .contact #contact-form .input-button:focus::-ms-input-placeholder {
+  color: #06183b;
+}
+
+.contact #contact-form .input-text:focus::placeholder, .contact #contact-form .input-textarea:focus::placeholder, .contact #contact-form .input-button:focus::placeholder {
+  color: #06183b;
+}
+
 /* Base reset */
 * {
   margin: 0;
@@ -366,7 +389,7 @@ canvas {
   padding: 0.5rem 0.7rem;
   border: 0.1rem solid #000;
   border-radius: 1rem;
-  background-color: #82a6a2;
+  background-color: #49ada4;
   font-weight: bold;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -419,9 +442,9 @@ canvas {
 /******SECTION PROJECTS******/
 .projects {
   position: relative;
-  height: 100vh;
+  height: 60vh;
   width: 100%;
-  background: #82a6a2;
+  background: #49ada4;
 }
 
 .projects .projects-container {
@@ -447,20 +470,31 @@ canvas {
   width: 11rem;
   border: 2px solid #06183b;
   border-radius: 5px;
-  background: #f95c6d;
+  background: transparent;
   margin: 0.5rem;
 }
 
 /******SECTION CONTACT******/
 .contact {
   position: relative;
-  height: 80vh;
+  height: 110vh;
   width: 100%;
 }
 
 .contact .contact-container {
-  margin: 1.5rem auto;
+  margin: 7rem auto;
   width: 11rem;
+}
+
+.contact .form-text-container {
+  width: 42%;
+  margin: 0 auto;
+}
+
+.contact .form-text-container #form-label {
+  font-size: 1.5rem;
+  color: #436d6c;
+  margin-bottom: 2rem;
 }
 
 .contact #contact-form {
@@ -487,10 +521,9 @@ canvas {
   width: 25rem;
   font-family: inherit;
   font-size: 1rem;
-  color: #06183b;
-  background-color: rgba(6, 24, 59, 0.2);
+  background-color: transparent;
   border: none;
-  border-bottom: 0.2rem #06183b solid;
+  border-bottom: 0.2rem #fff solid;
 }
 
 .contact #contact-form .input-text {
@@ -502,11 +535,43 @@ canvas {
   margin-top: 2rem;
 }
 
+.contact #contact-form .input-text::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.contact #contact-form .input-text:-ms-input-placeholder {
+  color: #fff;
+}
+
+.contact #contact-form .input-text::-ms-input-placeholder {
+  color: #fff;
+}
+
+.contact #contact-form .input-text::placeholder {
+  color: #fff;
+}
+
 .contact #contact-form .input-textarea {
   height: 6rem;
   min-height: 3rem;
   max-height: 10rem;
   resize: vertical;
+}
+
+.contact #contact-form .input-textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.contact #contact-form .input-textarea:-ms-input-placeholder {
+  color: #fff;
+}
+
+.contact #contact-form .input-textarea::-ms-input-placeholder {
+  color: #fff;
+}
+
+.contact #contact-form .input-textarea::placeholder {
+  color: #fff;
 }
 
 .contact #contact-form .input-button {
@@ -516,9 +581,22 @@ canvas {
   height: 3rem;
   width: 15rem;
   margin: 2rem auto;
-  color: #06183b;
-  background-color: #82a6a2;
+  color: #fff;
+  background-color: #49ada4;
+  border: none;
   border-radius: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.contact #contact-form .input-button:hover {
+  background: #436d6c;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #06183b;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 6px 15px #06183b;
+          box-shadow: 0px 6px 15px #06183b;
 }
 
 @-webkit-keyframes fadeIn {

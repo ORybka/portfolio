@@ -2,9 +2,12 @@ $colors: (
   bg: #06183b,
   bg-dark: darken(#06183b, 5%),
   bg-light: #fff,
-  bg-trans: rgba(6, 24, 59, 0.2),
   accent: #f95c6d,
-  accent2: #82a6a2,
+  accent-lt: #ff9e85,
+  accent-dk: #613b3b,
+  accent2: #49ada4,
+  accent2-lt: #b3e6e0,
+  accent2-dk: #436d6c,
 );
 
 @function color($colors-name) {
@@ -31,6 +34,17 @@ $colors: (
   grid-row: 1/3;
   position: relative;
   z-index: 10;
+}
+
+%input-focus {
+  outline: none;
+  border: none;
+  border-bottom: 0.2rem color(bg) solid;
+  color: color(bg);
+
+  &::placeholder {
+    color: color(bg);
+  }
 }
 
 /* Base reset */
@@ -355,7 +369,7 @@ canvas {
 /******SECTION PROJECTS******/
 .projects {
   position: relative;
-  height: 100vh;
+  height: 60vh;
   width: 100%;
   background: color(accent2);
 
@@ -377,7 +391,7 @@ canvas {
     width: 11rem;
     border: 2px solid color(bg);
     border-radius: 5px;
-    background: color(accent);
+    background: transparent;
     margin: 0.5rem;
   }
 }
@@ -385,12 +399,23 @@ canvas {
 /******SECTION CONTACT******/
 .contact {
   position: relative;
-  height: 80vh;
+  height: 110vh;
   width: 100%;
 
   .contact-container {
-    margin: 1.5rem auto;
+    margin: 7rem auto;
     width: 11rem;
+  }
+
+  .form-text-container {
+    width: 42%;
+    margin: 0 auto;
+
+    #form-label {
+      font-size: 1.5rem;
+      color: color(accent2-dk);
+      margin-bottom: 2rem;
+    }
   }
 
   #contact-form {
@@ -408,10 +433,9 @@ canvas {
       width: 25rem;
       font-family: inherit;
       font-size: 1rem;
-      color: color(bg);
-      background-color: color(bg-trans);
+      background-color: transparent;
       border: none;
-      border-bottom: 0.2rem color(bg) solid;
+      border-bottom: 0.2rem color(bg-light) solid;
     }
 
     .input-text {
@@ -421,6 +445,14 @@ canvas {
       &:first-child {
         margin-top: 2rem;
       }
+
+      &::placeholder {
+        color: color(bg-light);
+      }
+
+      &:focus {
+        @extend %input-focus;
+      }
     }
 
     .input-textarea {
@@ -428,6 +460,14 @@ canvas {
       min-height: 3rem;
       max-height: 10rem;
       resize: vertical;
+
+      &::placeholder {
+        color: color(bg-light);
+      }
+
+      &:focus {
+        @extend %input-focus;
+      }
     }
 
     .input-button {
@@ -437,9 +477,23 @@ canvas {
       height: 3rem;
       width: 15rem;
       margin: 2rem auto;
-      color: color(bg);
+      color: color(bg-light);
       background-color: color(accent2);
+      border: none;
       border-radius: 5px;
+      transition: all 0.5s;
+
+      &:hover {
+        background: color(accent2-dk);
+        transition: all 0.5s;
+        color: color(bg);
+        border-radius: 5px;
+        box-shadow: 0px 6px 15px color(bg);
+      }
+
+      &:focus {
+        @extend %input-focus;
+      }
     }
   }
 }
