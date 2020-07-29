@@ -1,15 +1,45 @@
 .about-grid .about-tech, .about-grid .about-exp, .about-grid .about-edu {
   color: #06183b;
   font-weight: bold;
-  border: 1rem solid #f95c6d;
-  background-color: #f95c6d;
-  border-radius: 25%;
-  height: 12rem;
-  width: 14rem;
+  background-color: transparent;
+  border: 1px solid #000;
+  height: 6rem;
+  width: 7rem;
   margin: 2rem 2rem 1rem;
-  padding-top: 2rem;
-  -webkit-transition: width 2s, height 3s;
-  transition: width 2s, height 3s;
+  padding: 1rem 0;
+}
+
+.about-grid .about-tech-hide, .about-grid .about-exp-hide, .about-grid .about-edu-hide {
+  opacity: 0;
+  color: #06183b;
+  background-color: transparent;
+  border: 1px solid #000;
+  height: 6rem;
+  max-width: 35rem;
+  margin: 2rem 2rem 1rem;
+  padding: 1rem 0;
+  -webkit-animation: fillIn 1s ease-in-out forwards;
+          animation: fillIn 1s ease-in-out forwards;
+}
+
+@-webkit-keyframes fillIn {
+  from {
+    width: 5%;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes fillIn {
+  from {
+    width: 5%;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
 }
 
 .contact #contact-form .input-text:focus, .contact #contact-form .input-textarea:focus, .contact #contact-form .input-button:focus {
@@ -277,15 +307,15 @@ canvas {
 .about-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
   width: 80%;
   margin: 0 auto 2rem;
-  height: 15rem;
+  height: 30rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .about-grid .about-tech {
@@ -295,39 +325,57 @@ canvas {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
-  /*
-    &:hover {
-      @extend %bg-circle-hover;
-    }
-    */
 }
 
-.about-grid .about-exp {
+.about-grid .about-tech-hide {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
-  /*
-    &:hover {
-      @extend %bg-circle-hover;
-    }
-    */
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.about-grid .about-exp {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.about-grid .about-exp-hide {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .about-grid .about-edu {
-  -ms-grid-column: 3;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 1;
-  grid-column: 3/4;
-  -ms-grid-row: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 3;
   -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  /*
-    &:hover {
-      @extend %bg-circle-hover;
-    }
-    */
+  grid-row: 3/4;
+}
+
+.about-grid .about-edu-hide {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 @-webkit-keyframes colorChange {
@@ -461,17 +509,17 @@ canvas {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50rem;
-  margin: 2rem 10rem;
+  width: 60rem;
+  margin: 0 auto;
 }
 
 #projects-flex .img {
-  height: 11rem;
-  width: 11rem;
-  border: 2px solid #06183b;
+  height: 14rem;
+  width: 14rem;
+  border: 1px solid #06183b;
   border-radius: 5px;
   background: transparent;
-  margin: 0.5rem;
+  margin: 0.5rem 0.25rem;
 }
 
 /******SECTION CONTACT******/
@@ -487,8 +535,9 @@ canvas {
 }
 
 .contact .form-text-container {
-  width: 42%;
+  width: 37rem;
   margin: 0 auto;
+  text-align: center;
 }
 
 .contact .form-text-container #form-label {
@@ -682,13 +731,19 @@ footer #footer-icons .mail {
   border: 0.2rem #fff solid;
   border-radius: 50%;
   color: #fff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 footer #footer-icons .fa:hover,
 footer #footer-icons .mail:hover {
   background-color: #06183b;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   color: #f95c6d;
   border: 0.2rem #f95c6d solid;
+  -webkit-box-shadow: 0px 6px 15px black;
+          box-shadow: 0px 6px 15px black;
 }
 
 footer #copyright {

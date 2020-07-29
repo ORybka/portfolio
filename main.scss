@@ -17,23 +17,34 @@ $colors: (
 %bg-circle {
   color: color(bg);
   font-weight: bold;
-  border: 1rem solid color(accent);
-  background-color: color(accent);
-  border-radius: 25%;
-  height: 12rem;
-  width: 14rem;
+  background-color: transparent;
+  border: 1px solid #000;
+  height: 6rem;
+  width: 7rem;
   margin: 2rem 2rem 1rem;
-  padding-top: 2rem;
-  transition: width 2s, height 3s;
+  padding: 1rem 0;
 }
 
-%bg-circle-hover {
-  width: 50rem;
-  height: 50rem;
-  grid-column: 1/4;
-  grid-row: 1/3;
-  position: relative;
-  z-index: 10;
+%bg-circle-hide {
+  opacity: 0;
+  color: color(bg);
+  background-color: transparent;
+  border: 1px solid #000;
+  height: 6rem;
+  max-width: 35rem;
+  margin: 2rem 2rem 1rem;
+  padding: 1rem 0;
+  animation: fillIn 1s ease-in-out forwards;
+}
+
+@keyframes fillIn {
+  from {
+    width: 5%;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
 }
 
 %input-focus {
@@ -256,48 +267,51 @@ canvas {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 1fr 1fr;
   width: 80%;
   margin: 0 auto 2rem;
-  height: 15rem;
+  height: 30rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   .about-tech {
     grid-column: 1/2;
     grid-row: 1/2;
     @extend %bg-circle;
+  }
 
-    /*
-    &:hover {
-      @extend %bg-circle-hover;
-    }
-    */
+  .about-tech-hide {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    @extend %bg-circle-hide;
+    animation-delay: 0s;
   }
 
   .about-exp {
-    grid-column: 2/3;
-    grid-row: 1/2;
+    grid-column: 1/2;
+    grid-row: 2/3;
     @extend %bg-circle;
+  }
 
-    /*
-    &:hover {
-      @extend %bg-circle-hover;
-    }
-    */
+  .about-exp-hide {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    @extend %bg-circle-hide;
+    animation-delay: 0.5s;
   }
 
   .about-edu {
-    grid-column: 3/4;
-    grid-row: 1/2;
+    grid-column: 1/2;
+    grid-row: 3/4;
     @extend %bg-circle;
+  }
 
-    /*
-    &:hover {
-      @extend %bg-circle-hover;
-    }
-    */
+  .about-edu-hide {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    @extend %bg-circle-hide;
+    animation-delay: 1s;
   }
 }
 
@@ -383,16 +397,16 @@ canvas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 50rem;
-  margin: 2rem 10rem;
+  width: 60rem;
+  margin: 0 auto;
 
   .img {
-    height: 11rem;
-    width: 11rem;
-    border: 2px solid color(bg);
+    height: 14rem;
+    width: 14rem;
+    border: 1px solid color(bg);
     border-radius: 5px;
     background: transparent;
-    margin: 0.5rem;
+    margin: 0.5rem 0.25rem;
   }
 }
 
@@ -408,8 +422,9 @@ canvas {
   }
 
   .form-text-container {
-    width: 42%;
+    width: 37rem;
     margin: 0 auto;
+    text-align: center;
 
     #form-label {
       font-size: 1.5rem;
@@ -559,11 +574,14 @@ footer {
       border: 0.2rem color(bg-light) solid;
       border-radius: 50%;
       color: color(bg-light);
+      transition: all 0.5s;
 
       &:hover {
         background-color: color(bg);
+        transition: all 0.5s;
         color: color(accent);
         border: 0.2rem color(accent) solid;
+        box-shadow: 0px 6px 15px black;
       }
     }
   }
