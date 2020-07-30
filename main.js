@@ -148,12 +148,29 @@ SCROLL ANIMATION
 // });
 
 
-$(document).ready(function() {
-  $(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
-      $(".main").addClass("test");
-    } else {
-      $("p").removeClass("test");
-    }
-  });
+// $(document).ready(function() {
+//   $(window).scroll(function() {
+//     if ($(document).scrollTop() > 150) {
+//       $(".main").addClass("animation-h1");
+//     } else {
+//       $("p").removeClass("animation-h1");
+//     }
+//   });
+// });
+
+$('a[href*="#"]').on('click', function (e) {
+  e.preventDefault();
+ 
+  $('html, body').animate({
+    scrollTop: $($(this).attr('href')).offset().top
+  }, 500, 'linear');
 });
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// http://manos.malihu.gr/page-scroll-to-id/
+
+
+
+
+
+

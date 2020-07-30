@@ -254,7 +254,9 @@ canvas {
   padding-top: 1rem;
   font-size: 3rem;
   color: color(bg);
-  animation: slideRight 0.7s ease both;
+  // opacity: 0;
+  // transform: translateX(300px);
+  // animation: slideRight 0.7s ease both;
 
   &::after {
     content: "";
@@ -267,17 +269,22 @@ canvas {
   }
 }
 
-
-@keyframes slideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.animation-h1 {
+  // opacity: 1;
+  // transform: translateX(0);
+  background-color: yelow;
 }
+
+// @keyframes slideRight {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(300px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
 
 .about-grid {
   display: grid;

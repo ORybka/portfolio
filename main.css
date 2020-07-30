@@ -288,8 +288,6 @@ canvas {
   padding-top: 1rem;
   font-size: 3rem;
   color: #06183b;
-  -webkit-animation: slideRight 0.7s ease both;
-          animation: slideRight 0.7s ease both;
 }
 
 .main-h1::after {
@@ -302,30 +300,8 @@ canvas {
   z-index: 1;
 }
 
-@-webkit-keyframes slideRight {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(300px);
-            transform: translateX(300px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes slideRight {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(300px);
-            transform: translateX(300px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
+.animation-h1 {
+  background-color: yelow;
 }
 
 .about-grid {
