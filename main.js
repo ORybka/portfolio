@@ -105,3 +105,55 @@ function myFunction() {
   }
 }
 
+/**********************************************
+SCROLL ANIMATION
+***********************************************/
+// let $animation_elements = $('.animation');
+// let $window = $(window);
+
+// function check_if_in_view() {
+//   let window_height = $window.height();
+//   let window_top_position = $window.scrollTop();
+//   let window_bottom_position = (window_top_position + window_height);
+ 
+//   $.each($animation_elements, function() {
+//     let $element = $(this);
+//     let element_height = $element.outerHeight();
+//     let element_top_position = $element.offset().top;
+//     let element_bottom_position = (element_top_position + element_height);
+ 
+//     //check to see if this current container is within viewport
+//     if ((element_bottom_position >= window_top_position) &&
+//         (element_top_position <= window_bottom_position)) {
+//       $element.addClass('in-view');
+//     } else {
+//       $element.removeClass('in-view');
+//     }
+//   });
+// }
+
+// $window.on('scroll resize', check_if_in_view);
+// $window.trigger('scroll');
+
+
+
+// $( ".main-h1" ).click(function() {
+//   $( "#book" ).animate({
+//     opacity: 0.25,
+//     left: "+=50",
+//     height: "toggle"
+//   }, 5000, function() {
+//     // Animation complete.
+//   });
+// });
+
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > 50) {
+      $(".main").addClass("test");
+    } else {
+      $("p").removeClass("test");
+    }
+  });
+});

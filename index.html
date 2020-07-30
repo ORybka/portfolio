@@ -57,28 +57,103 @@
     </div>
     <section id="about" class="about">
       <div class="about-container">
-        <h1 class="main-h1">About</h1>
+        <h1 class="main-h1 animation-h1">About</h1>
       </div>
       <div class="about-grid">
         <div class="about-tech">Technical skills</div>
-        <div class="about-tech-hide">Technical skills</div>
+        <div class="about-tech-hide animation">
+          <ul class="about-list">
+            <li style="width: 19%;">HTML + CSS</li>
+            <li>SASS</li>
+            <li>Bootstrap</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+            <li>CMS (Joomla)</li>
+            <li>Webpack, Babel, Gulp, Npm</li>
+            <li>Git/Github</li>
+            <li>Figma</li>
+          </ul>
+        </div>
         <div class="about-exp">Proffesional experience</div>
-        <div class="about-exp-hide">Proffesional experience</div>
-        <div class="about-edu">Education<br />Certificates</div>
-        <div class="about-edu-hide">Education</div>
+        <div class="about-exp-hide animation">
+          <ul class="about-list">
+            <div>
+              <li class="li-year">2018 - 2020</li>
+              <li>Golden Staff Study (Kyiv, Ukraine)</li>
+            </div>
+            <div>
+              <li class="li-year">2015 - 2019</li>
+              <li>Medicina VM (Kyiv, Ukraine)</li>
+            </div>
+            <div>
+              <li class="li-year">2018</li>
+              <li>OTTO Work Forse Polska (Wroclaw, Poland)</li>
+            </div>
+            <div>
+              <li class="li-year">2017</li>
+              <li>KOMSA Polska (Wroclaw, Poland)</li>
+            </div>
+          </ul>
+        </div>
+        <div class="about-crt">Certificates</div>
+        <div class="about-crt-hide animation">
+          <ul class="about-list">
+            <div>
+              <li class="li-year">2020</li>
+              <li>UDEMY</li>
+              <li>The Complete JavaScript Course</li>
+            </div>
+            <div>
+              <li class="li-year">2019</li>
+              <li>UDEMY</li>
+              <li>Learn Google Apps Script</li>
+            </div>
+            <div>
+              <li class="li-year">2018</li>
+              <li>PROMETHEUS MOOC</li>
+              <li>Modern project management</li>
+            </div>
+            <div>
+              <li class="li-year">2018</li>
+              <li>CORPORATE READINESS CERTIFICATE</li>
+              <li>Project Management with Agile the IBM Way</li>
+            </div>
+          </ul>
+        </div>
+        <div class="about-edu">Education</div>
+        <div class="about-edu-hide animation">
+          <ul class="about-list">
+            <div>
+              <li class="li-year">2016 - 2018</li>
+              <li>Wrocław University of Economics</li>
+            </div>
+            <div>
+              <li class="li-year">2017 - 2018</li>
+              <li>BBA INSEEC Bordeaux</li>
+            </div>
+            <div>
+              <li class="li-year">2015</li>
+              <li>Poznań University of Economics and Business</li>
+            </div>
+            <div>
+              <li class="li-year">2011 - 2015</li>
+              <li>Kyiv National Economic University</li>
+            </div>
+          </ul>
+        </div>
       </div>
       <a
         href="https://drive.google.com/file/d/1U6BzsUdoEVg2a9SwCXeTq-DWYM5vfl_r/view?usp=sharing"
         target="_blank"
         ><button id="button-cv">
-          <i class="material-icons download">get_app</i>
-          Download CV here
+          <i class="material-icons download animation">get_app</i>
+          Full CV here
         </button></a
       >
     </section>
     <section id="projects" class="projects">
       <div class="projects-container">
-        <h1 class="main-h1">Some of my projects</h1>
+        <h1 class="main-h1 animation-h1">Some of my projects</h1>
       </div>
       <div id="projects-flex">
         <div class="img">img1</div>
@@ -90,12 +165,14 @@
 
     <section id="contact" class="contact">
       <div class="contact-container">
-        <h1 class="main-h1">Contact</h1>
+        <h1 class="main-h1 animation-h1">Contact</h1>
       </div>
       <div class="form-text-container">
-        <h3 id="form-label">You can use the form below to ask me any questions!</h3>
+        <h3 id="form-label">
+          You can use the form below to ask me any questions!
+        </h3>
       </div>
-      <form id="contact-form" method="post">
+      <form class="contact-form animation" method="post">
         <input
           type="text"
           name="name"
@@ -117,38 +194,40 @@
       </form>
     </section>
     <footer>
-      <div id="logo-footer">
-        <a href="#intro"
-          ><img
-            src="logo_main.png"
-            alt="Olha Mykolaichuk - Front End developer"
-        /></a>
-      </div>
-      <h3>Eat, sleep, code, repeat</h3>
-      <div id="footer-icons">
-        <a
-          href="https://www.linkedin.com/in/olha-mykolaichuk/"
-          class="fa fa-linkedin"
-          target="_blank"
-        ></a>
-        <a
-          href="https://github.com/OlgaMyk"
-          class="fa fa-github"
-          target="_blank"
-        ></a>
-        <a href="mailto:olha.mykolaichuk@gmail.com">
-          <i class="material-icons download mail" target="_blank">mail</i></a
-        >
-        <a
-          href="https://codepen.io/Olga_Mykola"
-          class="fa fa-codepen"
-          target="_blank"
-        ></a>
-      </div>
-      <div id="copyright">
-        <span class="copyright-text">Olha Mykolaichuk</span>
-        <i class="material-icons download copyright-text">copyright</i>
-        <span class="copyright-text">2020</span>
+      <div id="footer-container">
+        <div id="logo-footer">
+          <a href="#intro"
+            ><img
+              src="logo_main.png"
+              alt="Olha Mykolaichuk - Front End developer"
+          /></a>
+        </div>
+        <h3>Eat, sleep, code, repeat</h3>
+        <div id="footer-icons">
+          <a
+            href="https://www.linkedin.com/in/olha-mykolaichuk/"
+            class="fa fa-linkedin"
+            target="_blank"
+          ></a>
+          <a
+            href="https://github.com/OlgaMyk"
+            class="fa fa-github"
+            target="_blank"
+          ></a>
+          <a href="mailto:olha.mykolaichuk@gmail.com">
+            <i class="material-icons download mail" target="_blank">mail</i></a
+          >
+          <a
+            href="https://codepen.io/Olga_Mykola"
+            class="fa fa-codepen"
+            target="_blank"
+          ></a>
+        </div>
+        <div id="copyright">
+          <span class="copyright-text">Olha Mykolaichuk</span>
+          <i class="material-icons download copyright-text">copyright</i>
+          <span class="copyright-text">2020</span>
+        </div>
       </div>
     </footer>
     <script src="main.js"></script>

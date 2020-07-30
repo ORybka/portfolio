@@ -1,25 +1,49 @@
-.about-grid .about-tech, .about-grid .about-exp, .about-grid .about-edu {
-  color: #06183b;
+.about-grid .about-tech, .about-grid .about-exp, .about-grid .about-crt, .about-grid .about-edu {
+  color: #49ada4;
   font-weight: bold;
   background-color: transparent;
-  border: 1px solid #000;
-  height: 6rem;
+  height: 4rem;
   width: 7rem;
-  margin: 2rem 2rem 1rem;
-  padding: 1rem 0;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-.about-grid .about-tech-hide, .about-grid .about-exp-hide, .about-grid .about-edu-hide {
+.about-grid .about-tech-hide, .about-grid .about-exp-hide, .about-grid .about-crt-hide, .about-grid .about-edu-hide {
+  text-align: start;
+  font-size: 0.9rem;
   opacity: 0;
   color: #06183b;
-  background-color: transparent;
-  border: 1px solid #000;
-  height: 6rem;
-  max-width: 35rem;
-  margin: 2rem 2rem 1rem;
-  padding: 1rem 0;
+  background-color: #f95c6d;
+  border-radius: 5px;
+  height: 8rem;
+  max-width: 37rem;
+  margin: 0.5rem 1.5rem;
+  padding: 0.5rem 0;
   -webkit-animation: fillIn 1s ease-in-out forwards;
           animation: fillIn 1s ease-in-out forwards;
+}
+
+.about-grid .about-tech-hide .about-list, .about-grid .about-exp-hide .about-list, .about-grid .about-crt-hide .about-list, .about-grid .about-edu-hide .about-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  margin: 0 1rem;
+  padding: 0;
+  list-style: none;
 }
 
 @-webkit-keyframes fillIn {
@@ -42,26 +66,26 @@
   }
 }
 
-.contact #contact-form .input-text:focus, .contact #contact-form .input-textarea:focus, .contact #contact-form .input-button:focus {
+.contact .contact-form .input-text:focus, .contact .contact-form .input-textarea:focus, .contact .contact-form .input-button:focus {
   outline: none;
   border: none;
   border-bottom: 0.2rem #06183b solid;
   color: #06183b;
 }
 
-.contact #contact-form .input-text:focus::-webkit-input-placeholder, .contact #contact-form .input-textarea:focus::-webkit-input-placeholder, .contact #contact-form .input-button:focus::-webkit-input-placeholder {
+.contact .contact-form .input-text:focus::-webkit-input-placeholder, .contact .contact-form .input-textarea:focus::-webkit-input-placeholder, .contact .contact-form .input-button:focus::-webkit-input-placeholder {
   color: #06183b;
 }
 
-.contact #contact-form .input-text:focus:-ms-input-placeholder, .contact #contact-form .input-textarea:focus:-ms-input-placeholder, .contact #contact-form .input-button:focus:-ms-input-placeholder {
+.contact .contact-form .input-text:focus:-ms-input-placeholder, .contact .contact-form .input-textarea:focus:-ms-input-placeholder, .contact .contact-form .input-button:focus:-ms-input-placeholder {
   color: #06183b;
 }
 
-.contact #contact-form .input-text:focus::-ms-input-placeholder, .contact #contact-form .input-textarea:focus::-ms-input-placeholder, .contact #contact-form .input-button:focus::-ms-input-placeholder {
+.contact .contact-form .input-text:focus::-ms-input-placeholder, .contact .contact-form .input-textarea:focus::-ms-input-placeholder, .contact .contact-form .input-button:focus::-ms-input-placeholder {
   color: #06183b;
 }
 
-.contact #contact-form .input-text:focus::placeholder, .contact #contact-form .input-textarea:focus::placeholder, .contact #contact-form .input-button:focus::placeholder {
+.contact .contact-form .input-text:focus::placeholder, .contact .contact-form .input-textarea:focus::placeholder, .contact .contact-form .input-button:focus::placeholder {
   color: #06183b;
 }
 
@@ -254,14 +278,14 @@ canvas {
 }
 
 .about-container {
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 1rem;
   width: 10rem;
 }
 
 .main-h1 {
   display: block;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   font-size: 3rem;
   color: #06183b;
   -webkit-animation: slideRight 0.7s ease both;
@@ -309,13 +333,18 @@ canvas {
   display: grid;
   -ms-grid-columns: 1fr 5fr;
       grid-template-columns: 1fr 5fr;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-  width: 80%;
-  margin: 0 auto 2rem;
-  height: 30rem;
+  -ms-grid-rows: 9rem 7rem 9.5rem 7rem;
+      grid-template-rows: 9rem 7rem 9.5rem 7rem;
   text-align: center;
-  font-size: 1.5rem;
+  width: 50rem;
+  margin: 0 auto;
+  height: 28rem;
+  font-size: 1.3rem;
+}
+
+.about-grid .li-year {
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
 .about-grid .about-tech {
@@ -345,6 +374,7 @@ canvas {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+  margin-top: 0;
 }
 
 .about-grid .about-exp-hide {
@@ -354,28 +384,53 @@ canvas {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+  height: 6rem;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
 
-.about-grid .about-edu {
+.about-grid .about-crt {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
+  height: 2rem;
 }
 
-.about-grid .about-edu-hide {
+.about-grid .about-crt-hide {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
+  height: 8.5rem;
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+
+.about-grid .about-edu {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
+  height: 2rem;
+}
+
+.about-grid .about-edu-hide {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
+  height: 6rem;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 @-webkit-keyframes colorChange {
@@ -428,11 +483,11 @@ canvas {
 #button-cv {
   display: block;
   position: absolute;
-  right: -10rem;
+  right: -8rem;
   top: 30rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  width: 13rem;
+  width: 11rem;
   height: 3.6rem;
   padding: 0.5rem 0.7rem;
   border: 0.1rem solid #000;
@@ -490,13 +545,13 @@ canvas {
 /******SECTION PROJECTS******/
 .projects {
   position: relative;
-  height: 60vh;
+  height: 50vh;
   width: 100%;
   background: #49ada4;
 }
 
 .projects .projects-container {
-  margin: 1.5rem auto;
+  margin: 2rem auto;
   width: 30rem;
 }
 
@@ -525,12 +580,12 @@ canvas {
 /******SECTION CONTACT******/
 .contact {
   position: relative;
-  height: 110vh;
+  height: 60vh;
   width: 100%;
 }
 
 .contact .contact-container {
-  margin: 7rem auto;
+  margin: 2rem auto;
   width: 11rem;
 }
 
@@ -546,7 +601,7 @@ canvas {
   margin-bottom: 2rem;
 }
 
-.contact #contact-form {
+.contact .contact-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -562,7 +617,7 @@ canvas {
           animation: fadeIn 1s ease-out 0.5s;
 }
 
-.contact #contact-form .input-general {
+.contact .contact-form .input-general {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -575,55 +630,55 @@ canvas {
   border-bottom: 0.2rem #fff solid;
 }
 
-.contact #contact-form .input-text {
+.contact .contact-form .input-text {
   height: 2rem;
   margin-bottom: 1rem;
 }
 
-.contact #contact-form .input-text:first-child {
+.contact .contact-form .input-text:first-child {
   margin-top: 2rem;
 }
 
-.contact #contact-form .input-text::-webkit-input-placeholder {
+.contact .contact-form .input-text::-webkit-input-placeholder {
   color: #fff;
 }
 
-.contact #contact-form .input-text:-ms-input-placeholder {
+.contact .contact-form .input-text:-ms-input-placeholder {
   color: #fff;
 }
 
-.contact #contact-form .input-text::-ms-input-placeholder {
+.contact .contact-form .input-text::-ms-input-placeholder {
   color: #fff;
 }
 
-.contact #contact-form .input-text::placeholder {
+.contact .contact-form .input-text::placeholder {
   color: #fff;
 }
 
-.contact #contact-form .input-textarea {
+.contact .contact-form .input-textarea {
   height: 6rem;
   min-height: 3rem;
   max-height: 10rem;
   resize: vertical;
 }
 
-.contact #contact-form .input-textarea::-webkit-input-placeholder {
+.contact .contact-form .input-textarea::-webkit-input-placeholder {
   color: #fff;
 }
 
-.contact #contact-form .input-textarea:-ms-input-placeholder {
+.contact .contact-form .input-textarea:-ms-input-placeholder {
   color: #fff;
 }
 
-.contact #contact-form .input-textarea::-ms-input-placeholder {
+.contact .contact-form .input-textarea::-ms-input-placeholder {
   color: #fff;
 }
 
-.contact #contact-form .input-textarea::placeholder {
+.contact .contact-form .input-textarea::placeholder {
   color: #fff;
 }
 
-.contact #contact-form .input-button {
+.contact .contact-form .input-button {
   text-decoration: none;
   font-family: inherit;
   font-size: 1.2rem;
@@ -638,7 +693,7 @@ canvas {
   transition: all 0.5s;
 }
 
-.contact #contact-form .input-button:hover {
+.contact .contact-form .input-button:hover {
   background: #436d6c;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -677,27 +732,31 @@ canvas {
 /******FOOTER******/
 footer {
   background-color: #06183b;
-  height: 50vh;
+  height: 70vh;
   width: 100%;
 }
 
-footer #logo-footer {
+footer #footer-container {
+  padding-top: 11rem;
+}
+
+footer #footer-container #logo-footer {
   height: 6rem;
 }
 
-footer #logo-footer a {
+footer #footer-container #logo-footer a {
   cursor: pointer;
 }
 
-footer #logo-footer img {
+footer #footer-container #logo-footer img {
   display: block;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   height: 7rem;
   width: auto;
 }
 
-footer h3 {
+footer #footer-container h3 {
   display: block;
   color: #fff;
   font-size: 2rem;
@@ -706,7 +765,7 @@ footer h3 {
   margin: 0.5rem auto 0;
 }
 
-footer #footer-icons {
+footer #footer-container #footer-icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -717,11 +776,11 @@ footer #footer-icons {
           align-items: center;
   width: 20%;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
-footer #footer-icons .fa,
-footer #footer-icons .mail {
+footer #footer-container #footer-icons .fa,
+footer #footer-container #footer-icons .mail {
   padding: 0.5rem;
   font-size: 1.5rem;
   width: 3rem;
@@ -735,8 +794,8 @@ footer #footer-icons .mail {
   transition: all 0.5s;
 }
 
-footer #footer-icons .fa:hover,
-footer #footer-icons .mail:hover {
+footer #footer-container #footer-icons .fa:hover,
+footer #footer-container #footer-icons .mail:hover {
   background-color: #06183b;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -746,15 +805,16 @@ footer #footer-icons .mail:hover {
           box-shadow: 0px 6px 15px black;
 }
 
-footer #copyright {
+footer #footer-container #copyright {
   display: block;
   width: 20%;
   margin: 0 auto;
+  text-align: center;
 }
 
-footer #copyright .copyright-text {
+footer #footer-container #copyright .copyright-text {
   color: #fff;
   font-size: 1rem;
-  margin: 2rem 1% 0;
+  margin: 1rem auto 0;
 }
 /*# sourceMappingURL=main.css.map */

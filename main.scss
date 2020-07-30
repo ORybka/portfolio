@@ -15,26 +15,39 @@ $colors: (
 }
 
 %bg-circle {
-  color: color(bg);
+  color: color(accent2);
   font-weight: bold;
   background-color: transparent;
-  border: 1px solid #000;
-  height: 6rem;
+  height: 4rem;
   width: 7rem;
-  margin: 2rem 2rem 1rem;
-  padding: 1rem 0;
+  justify-self: center;
+  align-self: center;
 }
 
 %bg-circle-hide {
+  text-align: start;
+  font-size: 0.9rem;
   opacity: 0;
   color: color(bg);
-  background-color: transparent;
-  border: 1px solid #000;
-  height: 6rem;
-  max-width: 35rem;
-  margin: 2rem 2rem 1rem;
-  padding: 1rem 0;
+  background-color: color(accent);
+  border-radius: 5px;
+  height: 8rem;
+  max-width: 37rem;
+  margin: 0.5rem 1.5rem;
+  padding: 0.5rem 0;
   animation: fillIn 1s ease-in-out forwards;
+
+  .about-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    margin: 0 1rem;
+    padding: 0;
+    list-style: none;
+  }
 }
 
 @keyframes fillIn {
@@ -231,14 +244,14 @@ canvas {
 }
 
 .about-container {
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 1rem;
   width: 10rem;
 }
 
 .main-h1 {
   display: block;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   font-size: 3rem;
   color: color(bg);
   animation: slideRight 0.7s ease both;
@@ -254,6 +267,7 @@ canvas {
   }
 }
 
+
 @keyframes slideRight {
   0% {
     opacity: 0;
@@ -268,12 +282,17 @@ canvas {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: 80%;
-  margin: 0 auto 2rem;
-  height: 30rem;
+  grid-template-rows: 9rem 7rem 9.5rem 7rem;
   text-align: center;
-  font-size: 1.5rem;
+  width: 50rem;
+  margin: 0 auto;
+  height: 28rem;
+  font-size: 1.3rem;
+
+  .li-year {
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
 
   .about-tech {
     grid-column: 1/2;
@@ -292,26 +311,45 @@ canvas {
     grid-column: 1/2;
     grid-row: 2/3;
     @extend %bg-circle;
+    margin-top: 0;
   }
 
   .about-exp-hide {
     grid-column: 2/3;
     grid-row: 2/3;
     @extend %bg-circle-hide;
+    height: 6rem;
     animation-delay: 0.5s;
+  }
+
+  .about-crt {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    @extend %bg-circle;
+    height: 2rem;
+  }
+
+  .about-crt-hide {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    @extend %bg-circle-hide;
+    height: 8.5rem;
+    animation-delay: 1s;
   }
 
   .about-edu {
     grid-column: 1/2;
-    grid-row: 3/4;
+    grid-row: 4/5;
     @extend %bg-circle;
+    height: 2rem;
   }
 
   .about-edu-hide {
     grid-column: 2/3;
-    grid-row: 3/4;
+    grid-row: 4/5;
     @extend %bg-circle-hide;
-    animation-delay: 1s;
+    height: 6rem;
+    animation-delay: 1.5s;
   }
 }
 
@@ -342,10 +380,10 @@ canvas {
 #button-cv {
   display: block;
   position: absolute;
-  right: -10rem;
+  right: -8rem;
   top: 30rem;
   transition: 0.3s;
-  width: 13rem;
+  width: 11rem;
   height: 3.6rem;
   padding: 0.5rem 0.7rem;
   border: 0.1rem solid #000;
@@ -383,12 +421,12 @@ canvas {
 /******SECTION PROJECTS******/
 .projects {
   position: relative;
-  height: 60vh;
+  height: 50vh;
   width: 100%;
   background: color(accent2);
 
   .projects-container {
-    margin: 1.5rem auto;
+    margin: 2rem auto;
     width: 30rem;
   }
 }
@@ -413,11 +451,11 @@ canvas {
 /******SECTION CONTACT******/
 .contact {
   position: relative;
-  height: 110vh;
+  height: 60vh;
   width: 100%;
 
   .contact-container {
-    margin: 7rem auto;
+    margin: 2rem auto;
     width: 11rem;
   }
 
@@ -433,7 +471,7 @@ canvas {
     }
   }
 
-  #contact-form {
+  .contact-form {
     display: flex;
     flex-direction: column;
     width: 30rem;
@@ -527,74 +565,79 @@ canvas {
 /******FOOTER******/
 footer {
   background-color: color(bg);
-  height: 50vh;
+  height: 70vh;
   width: 100%;
 
-  #logo-footer {
-    height: 6rem;
+  #footer-container {
+    padding-top: 11rem;
 
-    a {
-      cursor: pointer;
-    }
+    #logo-footer {
+      height: 6rem;
 
-    img {
-      display: block;
-      margin: 0 auto;
-      padding-top: 1rem;
-      height: 7rem;
-      width: auto;
-    }
-  }
+      a {
+        cursor: pointer;
+      }
 
-  h3 {
-    display: block;
-    color: color(bg-light);
-    font-size: 2rem;
-    width: 30rem;
-    text-align: center;
-    margin: 0.5rem auto 0;
-  }
-
-  #footer-icons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 20%;
-    margin: 0 auto;
-    padding-top: 2rem;
-
-    .fa,
-    .mail {
-      padding: 0.5rem;
-      font-size: 1.5rem;
-      width: 3rem;
-      height: 3rem;
-      text-align: center;
-      background: none;
-      border: 0.2rem color(bg-light) solid;
-      border-radius: 50%;
-      color: color(bg-light);
-      transition: all 0.5s;
-
-      &:hover {
-        background-color: color(bg);
-        transition: all 0.5s;
-        color: color(accent);
-        border: 0.2rem color(accent) solid;
-        box-shadow: 0px 6px 15px black;
+      img {
+        display: block;
+        margin: 0 auto;
+        padding-top: 0.5rem;
+        height: 7rem;
+        width: auto;
       }
     }
-  }
 
-  #copyright {
-    display: block;
-    width: 20%;
-    margin: 0 auto;
-
-    .copyright-text {
+    h3 {
+      display: block;
       color: color(bg-light);
-      font-size: 1rem;
-      margin: 2rem 1% 0;
+      font-size: 2rem;
+      width: 30rem;
+      text-align: center;
+      margin: 0.5rem auto 0;
+    }
+
+    #footer-icons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 20%;
+      margin: 0 auto;
+      padding-top: 1rem;
+
+      .fa,
+      .mail {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        background: none;
+        border: 0.2rem color(bg-light) solid;
+        border-radius: 50%;
+        color: color(bg-light);
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: color(bg);
+          transition: all 0.5s;
+          color: color(accent);
+          border: 0.2rem color(accent) solid;
+          box-shadow: 0px 6px 15px black;
+        }
+      }
+    }
+
+    #copyright {
+      display: block;
+      width: 20%;
+      margin: 0 auto;
+      text-align: center;
+
+      .copyright-text {
+        color: color(bg-light);
+        font-size: 1rem;
+        margin: 1rem auto 0;
+      }
     }
   }
 }
