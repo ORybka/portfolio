@@ -180,7 +180,7 @@ canvas {
       margin: 0.3rem 0.8rem 0.3rem;
     }
 
-    .nav {
+    #nav {
       display: flex;
       justify-content: flex-end;
       position: relative;
@@ -215,11 +215,11 @@ canvas {
         transition: width 0.5s ease-in-out;
       }
 
-      &:hover::after {
+      &:hover::after, &.active::after {
         width: 100%;
       }
 
-      &:hover {
+      &:hover, &.active {
         color: color(accent);
       }
     }
@@ -520,7 +520,7 @@ canvas {
     }
   }
 
-  .contact-form {
+  #contact-form {
     display: flex;
     flex-direction: column;
     width: 30rem;
@@ -573,7 +573,7 @@ canvas {
       }
     }
 
-    .input-button {
+    #submit-button {
       text-decoration: none;
       font-family: inherit;
       font-size: 1.2rem;

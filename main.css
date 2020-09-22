@@ -68,26 +68,26 @@
   }
 }
 
-.contact .contact-form .input-text:focus, .contact .contact-form .input-textarea:focus, .contact .contact-form .input-button:focus {
+.contact #contact-form .input-text:focus, .contact #contact-form .input-textarea:focus, .contact #contact-form #submit-button:focus {
   outline: none;
   border: none;
   border-bottom: 0.2rem #06183b solid;
   color: #06183b;
 }
 
-.contact .contact-form .input-text:focus::-webkit-input-placeholder, .contact .contact-form .input-textarea:focus::-webkit-input-placeholder, .contact .contact-form .input-button:focus::-webkit-input-placeholder {
+.contact #contact-form .input-text:focus::-webkit-input-placeholder, .contact #contact-form .input-textarea:focus::-webkit-input-placeholder, .contact #contact-form #submit-button:focus::-webkit-input-placeholder {
   color: #06183b;
 }
 
-.contact .contact-form .input-text:focus:-ms-input-placeholder, .contact .contact-form .input-textarea:focus:-ms-input-placeholder, .contact .contact-form .input-button:focus:-ms-input-placeholder {
+.contact #contact-form .input-text:focus:-ms-input-placeholder, .contact #contact-form .input-textarea:focus:-ms-input-placeholder, .contact #contact-form #submit-button:focus:-ms-input-placeholder {
   color: #06183b;
 }
 
-.contact .contact-form .input-text:focus::-ms-input-placeholder, .contact .contact-form .input-textarea:focus::-ms-input-placeholder, .contact .contact-form .input-button:focus::-ms-input-placeholder {
+.contact #contact-form .input-text:focus::-ms-input-placeholder, .contact #contact-form .input-textarea:focus::-ms-input-placeholder, .contact #contact-form #submit-button:focus::-ms-input-placeholder {
   color: #06183b;
 }
 
-.contact .contact-form .input-text:focus::placeholder, .contact .contact-form .input-textarea:focus::placeholder, .contact .contact-form .input-button:focus::placeholder {
+.contact #contact-form .input-text:focus::placeholder, .contact #contact-form .input-textarea:focus::placeholder, .contact #contact-form #submit-button:focus::placeholder {
   color: #06183b;
 }
 
@@ -209,7 +209,7 @@ canvas {
   margin: 0.3rem 0.8rem 0.3rem;
 }
 
-.menu-container .header .nav {
+.menu-container .header #nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -224,7 +224,7 @@ canvas {
   z-index: 10;
 }
 
-.menu-container .header .nav .nav-list {
+.menu-container .header #nav .nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -253,11 +253,11 @@ canvas {
   transition: width 0.5s ease-in-out;
 }
 
-.menu-container .header .nav-pnkt:hover::after {
+.menu-container .header .nav-pnkt:hover::after, .menu-container .header .nav-pnkt.active::after {
   width: 100%;
 }
 
-.menu-container .header .nav-pnkt:hover {
+.menu-container .header .nav-pnkt:hover, .menu-container .header .nav-pnkt.active {
   color: #f95c6d;
 }
 
@@ -622,7 +622,7 @@ canvas {
   margin-bottom: 2rem;
 }
 
-.contact .contact-form {
+.contact #contact-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -640,7 +640,7 @@ canvas {
           box-shadow: 0px 6px 15px black;
 }
 
-.contact .contact-form .input-general {
+.contact #contact-form .input-general {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -653,55 +653,55 @@ canvas {
   border-bottom: 0.2rem #fff solid;
 }
 
-.contact .contact-form .input-text {
+.contact #contact-form .input-text {
   height: 2rem;
   margin-bottom: 1rem;
 }
 
-.contact .contact-form .input-text:first-child {
+.contact #contact-form .input-text:first-child {
   margin-top: 2rem;
 }
 
-.contact .contact-form .input-text::-webkit-input-placeholder {
+.contact #contact-form .input-text::-webkit-input-placeholder {
   color: #fff;
 }
 
-.contact .contact-form .input-text:-ms-input-placeholder {
+.contact #contact-form .input-text:-ms-input-placeholder {
   color: #fff;
 }
 
-.contact .contact-form .input-text::-ms-input-placeholder {
+.contact #contact-form .input-text::-ms-input-placeholder {
   color: #fff;
 }
 
-.contact .contact-form .input-text::placeholder {
+.contact #contact-form .input-text::placeholder {
   color: #fff;
 }
 
-.contact .contact-form .input-textarea {
+.contact #contact-form .input-textarea {
   height: 6rem;
   min-height: 3rem;
   max-height: 10rem;
   resize: vertical;
 }
 
-.contact .contact-form .input-textarea::-webkit-input-placeholder {
+.contact #contact-form .input-textarea::-webkit-input-placeholder {
   color: #fff;
 }
 
-.contact .contact-form .input-textarea:-ms-input-placeholder {
+.contact #contact-form .input-textarea:-ms-input-placeholder {
   color: #fff;
 }
 
-.contact .contact-form .input-textarea::-ms-input-placeholder {
+.contact #contact-form .input-textarea::-ms-input-placeholder {
   color: #fff;
 }
 
-.contact .contact-form .input-textarea::placeholder {
+.contact #contact-form .input-textarea::placeholder {
   color: #fff;
 }
 
-.contact .contact-form .input-button {
+.contact #contact-form #submit-button {
   text-decoration: none;
   font-family: inherit;
   font-size: 1.2rem;
@@ -716,7 +716,7 @@ canvas {
   transition: all 0.5s;
 }
 
-.contact .contact-form .input-button:hover {
+.contact #contact-form #submit-button:hover {
   background: #436d6c;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
