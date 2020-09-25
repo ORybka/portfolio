@@ -129,19 +129,119 @@ body {
   overflow-x: hidden;
 }
 
+/******GENERAL******/
+.container {
+  max-width: 85rem;
+  margin: 0 auto;
+}
+
+.main-h1 {
+  display: block;
+  text-align: center;
+  padding-top: 4rem;
+  font-size: 3rem;
+  color: #06183b;
+  opacity: 0;
+  -webkit-transform: translateX(300px);
+          transform: translateX(300px);
+  -webkit-animation: slideRight 0.7s ease both;
+          animation: slideRight 0.7s ease both;
+}
+
+.main-h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.3rem;
+  background: #06183b;
+  position: relative;
+  z-index: 1;
+}
+
+.animation-h1 {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  background-color: yellow;
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 /******INTRO******/
 .intro-container {
-  background-color: #06183b;
-  background-size: cover;
   height: 100vh;
   width: 100%;
 }
 
-canvas {
-  overflow: hidden;
-  width: 100vw;
+.bg {
   height: 100vh;
+  -webkit-animation: slide 3s ease-in-out infinite alternate;
+          animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #06183b 50%, #49ada4 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
   position: absolute;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.bg3 {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
 }
 
 .intro {
@@ -178,6 +278,8 @@ canvas {
 
 .intro #more:hover {
   background: #f95c6d;
+  -webkit-box-shadow: 0px 6px 15px black;
+          box-shadow: 0px 6px 15px black;
 }
 
 /******MENU******/
@@ -204,9 +306,9 @@ canvas {
 }
 
 .menu-container .header #logo-main img {
-  height: 4rem;
+  height: 3.5rem;
   width: auto;
-  margin: 0.3rem 0.8rem 0.3rem;
+  margin-left: 1rem;
 }
 
 .menu-container .header #nav {
@@ -268,42 +370,16 @@ canvas {
   z-index: 100;
 }
 
-.sticky + .about + .projects + .contact {
-  padding-top: 102px;
-}
-
 /******SECTION ABOUT******/
 .about {
   position: relative;
-  height: 100vh;
+  height: 110vh;
   width: 100%;
 }
 
 .about-container {
-  margin: 1.5rem auto 1rem;
+  margin: 4rem auto 1rem;
   width: 10rem;
-}
-
-.main-h1 {
-  display: block;
-  text-align: center;
-  padding-top: 1rem;
-  font-size: 3rem;
-  color: #06183b;
-}
-
-.main-h1::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 0.3rem;
-  background: #06183b;
-  position: relative;
-  z-index: 1;
-}
-
-.animation-h1 {
-  background-color: yelow;
 }
 
 .about-grid {
@@ -459,7 +535,13 @@ canvas {
 
 /******BUTTON******/
 #button-cv {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   position: absolute;
   right: -8rem;
   top: 30rem;
@@ -467,19 +549,37 @@ canvas {
   transition: 0.3s;
   width: 11rem;
   height: 3.6rem;
-  padding: 0.5rem 0.7rem;
+  padding: 1.2rem 0.7rem;
   border: 0.1rem solid #000;
   border-radius: 1rem;
+  -webkit-box-shadow: 0px 8px 18px black;
+          box-shadow: 0px 8px 18px black;
   background-color: #49ada4;
   font-weight: bold;
   font-size: 0.9rem;
   text-transform: uppercase;
 }
 
+#button-cv #button-download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#button-cv #button-download h2 {
+  position: absolute;
+  top: 35%;
+  left: 14.5%;
+}
+
 #button-cv .download {
   display: block;
   float: left;
-  padding: 0.4rem 0.3rem 0.2rem;
+  padding: 0 0.5rem 0;
   -webkit-animation: download 1s ease 1s infinite alternate;
           animation: download 1s ease 1s infinite alternate;
 }
@@ -523,13 +623,13 @@ canvas {
 /******SECTION PROJECTS******/
 .projects {
   position: relative;
-  height: 50vh;
+  height: 60vh;
   width: 100%;
   background: #49ada4;
 }
 
 .projects .projects-container {
-  margin: 2rem auto;
+  margin: 4rem auto;
   width: 30rem;
 }
 
@@ -539,16 +639,15 @@ canvas {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 60rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 70rem;
   margin: 0 auto;
 }
 
 #projects-flex .img {
-  height: 14rem;
-  width: 14rem;
+  height: 16rem;
+  width: 16rem;
   overflow: hidden;
   border: 1px solid #06183b;
   border-radius: 5px;
@@ -567,7 +666,7 @@ canvas {
 
 #projects-flex .img .overlay {
   position: relative;
-  top: -14rem;
+  top: -16rem;
   bottom: 0;
   left: 0;
   right: 0;
@@ -588,25 +687,25 @@ canvas {
   opacity: 1;
   font-size: 24px;
   font-weight: bold;
-  line-height: 2rem;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
-  text-transform: lowercase;
 }
 
 /******SECTION CONTACT******/
 .contact {
   position: relative;
-  height: 60vh;
+  height: 70vh;
   width: 100%;
+  background-image: url(assets/bg.jpg);
+  background-position: 30% 23%;
 }
 
 .contact .contact-container {
-  margin: 2rem auto;
+  margin: 12rem auto 2rem;
   width: 11rem;
 }
 
@@ -755,7 +854,7 @@ canvas {
 /******FOOTER******/
 footer {
   background-color: #06183b;
-  height: 70vh;
+  height: 75vh;
   width: 100%;
 }
 
@@ -775,17 +874,25 @@ footer #footer-container #logo-footer img {
   display: block;
   margin: 0 auto;
   padding-top: 0.5rem;
-  height: 7rem;
+  height: 6.5rem;
   width: auto;
 }
 
-footer #footer-container h3 {
-  display: block;
-  color: #fff;
+footer #footer-container #text-footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
   font-size: 2rem;
   width: 30rem;
-  text-align: center;
   margin: 0.5rem auto 0;
+}
+
+footer #footer-container #text-footer-container .text-footer {
+  color: #fff;
 }
 
 footer #footer-container #footer-icons {

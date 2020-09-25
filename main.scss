@@ -109,19 +109,98 @@ body {
   overflow-x: hidden;
 }
 
+// @media all and (min-width: 576px) {
+//   body {font-size: 46.875%}
+// }
+
+// @media all and (min-width: 768px) {
+//   body {font-size: 52.0833333333%}
+// }
+
+// @media all and (min-width: 992px) {
+//   body {font-size: 62.5%}
+// }
+
+/******GENERAL******/
+.container {
+  max-width: 85rem;
+  margin: 0 auto;
+  
+}
+
+.main-h1 {
+  display: block;
+  text-align: center;
+  padding-top: 4rem;
+  font-size: 3rem;
+  color: color(bg);
+  opacity: 0;
+  transform: translateX(300px);
+  animation: slideRight 0.7s ease both;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    background: #06183b;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.animation-h1 {
+  opacity: 1;
+  transform: translateX(0);
+  background-color: yellow;
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /******INTRO******/
 .intro-container {
-  background-color: color(bg);
-  background-size: cover;
   height: 100vh;
   width: 100%;
 }
 
-canvas {
-  overflow: hidden;
-  width: 100vw;
+.bg {
   height: 100vh;
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, color(bg) 50%, color(accent2) 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
   position: absolute;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
 }
 
 .intro {
@@ -155,6 +234,7 @@ canvas {
 
     &:hover {
       background: color(accent);
+      box-shadow: 0px 6px 15px black;
     }
   }
 }
@@ -175,9 +255,9 @@ canvas {
     align-items: center;
 
     #logo-main img {
-      height: 4rem;
+      height: 3.5rem;
       width: auto;
-      margin: 0.3rem 0.8rem 0.3rem;
+      margin-left: 1rem;
     }
 
     #nav {
@@ -233,59 +313,17 @@ canvas {
   z-index: 100;
 }
 
-.sticky + .about + .projects + .contact {
-  padding-top: 102px;
-} //?????????????????
-
 /******SECTION ABOUT******/
 .about {
   position: relative;
-  height: 100vh;
+  height: 110vh;
   width: 100%;
 }
 
 .about-container {
-  margin: 1.5rem auto 1rem;
+  margin: 4rem auto 1rem;
   width: 10rem;
 }
-
-.main-h1 {
-  display: block;
-  text-align: center;
-  padding-top: 1rem;
-  font-size: 3rem;
-  color: color(bg);
-  // opacity: 0;
-  // transform: translateX(300px);
-  // animation: slideRight 0.7s ease both;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 0.3rem;
-    background: #06183b;
-    position: relative;
-    z-index: 1;
-  }
-}
-
-.animation-h1 {
-  // opacity: 1;
-  // transform: translateX(0);
-  background-color: yelow;
-}
-
-// @keyframes slideRight {
-//   0% {
-//     opacity: 0;
-//     transform: translateX(300px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
 
 .about-grid {
   display: grid;
@@ -386,28 +424,41 @@ canvas {
 
 /******BUTTON******/
 #button-cv {
-  display: block;
+  display: flex;
+  flex-direction: row;
   position: absolute;
   right: -8rem;
   top: 30rem;
   transition: 0.3s;
   width: 11rem;
   height: 3.6rem;
-  padding: 0.5rem 0.7rem;
+  padding: 1.2rem 0.7rem;
   border: 0.1rem solid #000;
   border-radius: 1rem;
+  box-shadow: 0px 8px 18px black;
   background-color: color(accent2);
   font-weight: bold;
   font-size: 0.9rem;
   text-transform: uppercase;
 
+  #button-download {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      position: absolute;
+      top: 35%;
+      left: 14.5%;
+    }
+  }
+
   .download {
     display: block;
     float: left;
-    padding: 0.4rem 0.3rem 0.2rem;
+    padding: 0 0.5rem 0;
     animation: download 1s ease 1s infinite alternate;
   }
-
+  
   &:hover {
     right: 0;
   }
@@ -429,12 +480,12 @@ canvas {
 /******SECTION PROJECTS******/
 .projects {
   position: relative;
-  height: 50vh;
+  height: 60vh;
   width: 100%;
   background: color(accent2);
 
   .projects-container {
-    margin: 2rem auto;
+    margin: 4rem auto;
     width: 30rem;
   }
 }
@@ -442,13 +493,13 @@ canvas {
 #projects-flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 60rem;
+  justify-content: space-around;
+  width: 70rem;
   margin: 0 auto;
 
   .img {
-    height: 14rem;
-    width: 14rem;
+    height: 16rem;
+    width: 16rem;
     overflow: hidden;
     border: 1px solid color(bg);
     border-radius: 5px;
@@ -465,7 +516,7 @@ canvas {
 
     .overlay {
       position: relative;
-      top: -14rem;
+      top: -16rem;
       bottom: 0;
       left: 0;
       right: 0;
@@ -486,13 +537,11 @@ canvas {
       opacity: 1;
       font-size: 24px;
       font-weight: bold;
-      line-height: 2rem;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      text-transform: lowercase;
     }
   }
 }
@@ -500,11 +549,13 @@ canvas {
 /******SECTION CONTACT******/
 .contact {
   position: relative;
-  height: 60vh;
+  height: 70vh;
   width: 100%;
+  background-image: url(assets/bg.jpg);
+  background-position: 30% 23%;
 
   .contact-container {
-    margin: 2rem auto;
+    margin: 12rem auto 2rem;
     width: 11rem;
   }
 
@@ -615,7 +666,7 @@ canvas {
 /******FOOTER******/
 footer {
   background-color: color(bg);
-  height: 70vh;
+  height: 75vh;
   width: 100%;
 
   #footer-container {
@@ -632,18 +683,22 @@ footer {
         display: block;
         margin: 0 auto;
         padding-top: 0.5rem;
-        height: 7rem;
+        height: 6.5rem;
         width: auto;
       }
     }
 
-    h3 {
-      display: block;
-      color: color(bg-light);
+    #text-footer-container {
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
       font-size: 2rem;
       width: 30rem;
-      text-align: center;
       margin: 0.5rem auto 0;
+
+      .text-footer {
+        color: color(bg-light);
+      }
     }
 
     #footer-icons {
