@@ -911,6 +911,24 @@ body {
   right: 0;
 }
 
+@media (max-width: 576px) {
+  #button-cv {
+    right: -7rem;
+    top: 60rem;
+    width: 9rem;
+    height: 3.2rem;
+    padding: 1rem 0 1rem 0.35rem;
+    font-size: 0.7rem;
+  }
+  #button-cv #button-download h2 {
+    left: 9%;
+  }
+  #button-cv .download {
+    padding: 0 1rem 0 0.2rem;
+    font-size: 1rem;
+  }
+}
+
 /*******PROJECTS********/
 .height {
   height: 90vh;
@@ -924,7 +942,7 @@ body {
 
 @media (max-width: 576px) {
   .height {
-    height: 60vh;
+    height: 80vh;
   }
 }
 
@@ -950,6 +968,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 9rem;
+  padding-top: 2rem;
 }
 
 .projects .img-container {
@@ -1072,6 +1091,13 @@ body {
   font-size: 1.5rem;
   color: #436d6c;
   margin: 0 1rem 2rem;
+}
+
+@media (max-width: 576px) {
+  .contact .contact-container .form-text-container #form-label {
+    font-size: 1rem;
+    max-width: 15rem;
+  }
 }
 
 .contact .contact-container #contact-form {
