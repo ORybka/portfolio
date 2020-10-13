@@ -832,7 +832,7 @@ body {
     .project-desc {
       color: color(accent2);
       opacity: 1;
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: bold;
       position: absolute;
       top: 50%;
@@ -870,6 +870,14 @@ body {
       height: 8rem;
       width: 8rem;
       margin: 0.2rem 0.2rem 0.2rem 0.5rem;
+
+      .overlay {
+        top: -8rem;
+      }
+  
+      .project-desc {
+        font-size: 1rem;
+      }
     }
   }
 }
@@ -1032,6 +1040,12 @@ body {
   }
 }
 
+@media (max-width: 400px) and (min-height: 600px) {
+  .contact {
+  height: 70vh;
+  }
+}
+
 /*******FOOTER********/
 footer {
   display: flex;
@@ -1152,6 +1166,16 @@ footer {
   
     .footer-container {
       margin-top: 12rem;
+    }
+  }
+}
+
+@media (max-width: 400px) and (min-height: 600px) {
+  footer {
+    height: 50vh;
+
+    .footer-container {
+      margin-top: 8rem;
     }
   }
 }
