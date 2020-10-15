@@ -413,7 +413,7 @@ body {
   display: flex;
 }
 
-.menu-container .header .test {
+.menu-container .header .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,7 +468,7 @@ body {
 }
 
 @media (max-width: 576px) {
-  .menu-container .header .test {
+  .menu-container .header .header-container {
     position: relative;
     width: 100%;
   }
@@ -485,7 +485,7 @@ body {
   .menu-container .header #nav.active {
     height: 4rem;
     margin-top: 8.5rem;
-    z-index: -1;
+    z-index: 5;
   }
   .menu-container .header #nav .nav-list {
     margin: 0 auto 1rem;
@@ -853,6 +853,7 @@ body {
 @media (max-width: 576px) {
   .about .about-container {
     width: 15rem;
+    z-index: 2;
   }
 }
 
@@ -913,12 +914,16 @@ body {
 
 @media (max-width: 576px) {
   #button-cv {
-    right: -7rem;
-    top: 60rem;
+    position: relative;
+    right: 0;
+    top: 0;
     width: 9rem;
     height: 3.2rem;
     padding: 1rem 0 1rem 0.35rem;
+    margin: 0 auto 2rem;
     font-size: 0.7rem;
+    -webkit-box-shadow: 0px 6px 15px black;
+            box-shadow: 0px 6px 15px black;
   }
   #button-cv #button-download h2 {
     left: 9%;
