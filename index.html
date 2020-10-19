@@ -18,6 +18,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- ANIMATION -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- LOCAL FILES -->
@@ -212,7 +214,7 @@
         <section id="projects" class="projects column">
           <div class="projects-container column">
             <h1 class="main-h1">Some of my projects</h1>
-            <div class="row">
+            <div class="row" data-aos="fade-up" data-aos-duration="1500">
                 <div class="img-container">
                   <a href="http://orybka.github.io/tetris/" target="_blank" rel="noopener noreferrer">
                     <img src="assets/poject_1.jpg" alt="poject 1">
@@ -260,7 +262,7 @@
                 You can use the form below to ask me any questions!
               </h3>
             </div>
-            <form id="contact-form" class="column" action="https://usebasin.com/f/834440f722dc" method="POST">
+            <form id="contact-form" class="column" action="https://usebasin.com/f/834440f722dc" method="POST" data-aos="fade-up" data-aos-duration="1500">
               <input
                 type="text"
                 name="name"
@@ -327,6 +329,7 @@
         </div>
       </footer>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

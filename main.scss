@@ -81,6 +81,15 @@ body {
   .main-h1 {
     font-size: 2.5rem;
     margin: 2.5rem 0 1rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 0.2rem;
+      background: color(bg);
+      position: relative;
+    }
   }
 
   @media (max-width: 767px) {
@@ -118,16 +127,6 @@ body {
   }
 }
 
-// @media  (min-device-width: 560px) 
-//     and (max-device-width: 823px)
-//     and (min-device-height: 320px) 
-//     and (max-device-height: 420px)  
-//     and (orientation: landscape) {
-//       .container {
-//         height: 40rem !important;
-//       }
-//     }
-
 /*******FLEXBOX********/
 .row {
   display: flex;
@@ -160,37 +159,12 @@ body {
   }
 }
 
-@keyframes slideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(300px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes colorChange {
   from {
     color: color(accent);
   }
   to {
     color: color(bg-light);
-  }
-}
-
-@keyframes about {
-  from {
-    height: 12rem;
-    width: 14rem;
-    margin: 2rem 2rem 1rem;
-    padding-top: 2rem;
-  }
-  to {
-    position: absolute;
-    height: 30rem;
-    width: 50rem;
   }
 }
 
@@ -204,17 +178,6 @@ body {
   70% {
     transform: scale(1);
     transform: scale(1);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(300px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
