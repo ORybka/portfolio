@@ -42,16 +42,15 @@ h6 {
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 body {
   font-family: "Nunito", Arial, Verdana, sans-serif;
   /* 1rem = 14px, 87.5% = 14px*/
   font-size: 87.5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 @media (max-width: 767px) {
