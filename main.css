@@ -59,6 +59,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -474,7 +475,7 @@ body {
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 5;
 }
 
