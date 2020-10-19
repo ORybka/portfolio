@@ -78,15 +78,8 @@ $(document).ready(function() {
 });
 
 /**********************************************
-FOOTER
+SLIDESHOW - ABOUT SECTION
 ***********************************************/
-let i = 0;
-function changeColor() {
-  Array.from(text).forEach(el => {
-    el.style.color = footerColors[i];
-    i = (i + 1) % footerColors.length;
-  });
-}
 setInterval(changeColor, 1000);
 
 let slideIndex = 1;
@@ -105,8 +98,12 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   const slides = document.getElementsByClassName("mySlides");
-  const dots = document.getElementsByClassName("dot");
-  if (window.matchMedia("(max-width: 767px)").matches) {
+  const mql = [
+    "(max-width: 767px)",
+    "(min-device-width: 560px) and (max-device-width: 823px) and (min-device-height: 320px) and (max-device-height: 420px) and (orientation: landscape)"
+  ];
+  
+  if (window.matchMedia(mql).matches) {
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
@@ -118,4 +115,15 @@ function showSlides(n) {
       slides[i].style.display = "block";
     }
   }
+}
+
+/**********************************************
+FOOTER
+***********************************************/
+let i = 0;
+function changeColor() {
+  Array.from(text).forEach(el => {
+    el.style.color = footerColors[i];
+    i = (i + 1) % footerColors.length;
+  });
 }

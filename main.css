@@ -1120,6 +1120,7 @@ body {
   border-radius: 5px;
   -webkit-box-shadow: 0px 6px 15px black;
           box-shadow: 0px 6px 15px black;
+  z-index: 2;
 }
 
 .contact .contact-container #contact-form .input-general {
@@ -1400,10 +1401,31 @@ footer .footer-container #copyright .copyright-text {
 
 @media (max-width: 400px) and (min-height: 600px) {
   footer {
-    height: 50vh;
+    height: 60vh;
   }
   footer .footer-container {
     margin-top: 8rem;
+  }
+}
+
+/***********LANDSCAPE ORIENTATION**********/
+@media (min-device-width: 560px) and (max-device-width: 823px) and (min-device-height: 320px) and (max-device-height: 420px) and (orientation: landscape) {
+  .container {
+    height: 40rem !important;
+  }
+  .container .main-h1 {
+    margin: 8rem 0 1rem;
+  }
+  .about .about-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  footer {
+    height: 25rem !important;
+  }
+  footer .footer-container {
+    margin-top: 4rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
